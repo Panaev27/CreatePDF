@@ -28,7 +28,7 @@ public class CreatePDF {
     }
     public void Create(String numberpdf) throws IOException {
       	
-    	Document document = new Document(); //создание класса Document
+    	Document document = new Document(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Document
     	
     	String filepath = new File("").getCanonicalPath();
 		String[] parsfilepath = filepath.split("/");
@@ -40,7 +40,7 @@ public class CreatePDF {
 		}
 		filepath=abspath+"webapps/CreatePDF/Check.pdf";
 		String imagepath=abspath+"webapps/CreatePDF/picture/ugatu.png";
-		String fontpath =abspath+"/webapps/CreatePDF/fonts/times.ttf";
+		String fontpath =abspath+"webapps/CreatePDF/fonts/times.ttf";
     	
 		try {	
 			PdfWriter.getInstance(document, new FileOutputStream(filepath));
@@ -57,11 +57,11 @@ public class CreatePDF {
 			e.printStackTrace();
 		}
 		
-		String string_pdf = "Добрый день замечательные группы ПИ второго курса кафедры АСУ УГАТУ! Тестовое приложения для создания PDF файла.";
+		String string_pdf = "Р”РѕР±СЂС‹Р№ РґРµРЅСЊ Р·Р°РјРµС‡Р°С‚РµР»СЊРЅС‹Рµ РіСЂСѓРїРїС‹ РџР РІС‚РѕСЂРѕРіРѕ РєСѓСЂСЃР° РєР°С„РµРґСЂС‹ РђРЎРЈ РЈР“РђРўРЈ! РўРµСЃС‚РѕРІРѕРµ РїСЂРёР»РѕР¶РµРЅРёСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ PDF С„Р°Р№Р»Р°.";
 		Paragraph paragraph = new Paragraph();
 	    paragraph.add(new Paragraph(string_pdf, new Font(times,14)));
 	    
-	    String string_pdf2 = "Дополнительный текст, который выводится в PDF. При этом нужно понимать, что можно указывать значения переменных, которые будут выводится в файл PDF.";
+	    String string_pdf2 = "Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅС‹Р№ С‚РµРєСЃС‚, РєРѕС‚РѕСЂС‹Р№ РІС‹РІРѕРґРёС‚СЃСЏ РІ PDF. РџСЂРё СЌС‚РѕРј РЅСѓР¶РЅРѕ РїРѕРЅРёРјР°С‚СЊ, С‡С‚Рѕ РјРѕР¶РЅРѕ СѓРєР°Р·С‹РІР°С‚СЊ Р·РЅР°С‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅС‹С…, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ РІС‹РІРѕРґРёС‚СЃСЏ РІ С„Р°Р№Р» PDF.";
 	    paragraph.add(new Paragraph(string_pdf2, new Font(times,14)));
 	
 	    try {
@@ -70,7 +70,7 @@ public class CreatePDF {
 			e1.printStackTrace();
 		}
 	    
-	  //организация перехода на следующую строку
+	  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		 paragraph.clear();
 		 String string_pdf3 = " ";
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
@@ -82,7 +82,7 @@ public class CreatePDF {
 			}
     	
 	    
-	  //добавление изображения в pdf
+	  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ pdf
 	    Image img = null;
 		try {
 			img = Image.getInstance(imagepath);
@@ -99,7 +99,7 @@ public class CreatePDF {
 			e2.printStackTrace();
 		}
 		
-		img.setAbsolutePosition(90, 500); //позиционирование изображения в PDF
+		img.setAbsolutePosition(90, 500); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ PDF
 		
 		try {
 				document.add(img);
@@ -108,7 +108,7 @@ public class CreatePDF {
 			}
 	    
 	    
-		 //организация перехода на следующую строку
+		 //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		 paragraph.clear();
 		 paragraph.add(new Paragraph(string_pdf3, new Font(times,14)));
 		 
@@ -119,10 +119,10 @@ public class CreatePDF {
 			}
 	    
 		 
-		//добавление таблицы
-		 PdfPTable table = new PdfPTable(4); //создание таблицы с 4 столбцами
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		 PdfPTable table = new PdfPTable(4); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ 4 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		 addHeader(table);
-		 addRows(table);
+		 addRows(table, times);
 		 
 		 try {
 			document.add(table);
@@ -130,23 +130,24 @@ public class CreatePDF {
 			e.printStackTrace();
 		}
 	    
-	    document.close(); //закрытие и сохранение документа PDF
+	    document.close(); //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ PDF
     }
     
-private void addRows(PdfPTable table) {
+private void addRows(PdfPTable table, BaseFont font) {
 		
-		//заполнение таблицы вводимыми значения в текстовые поля на главной форме
-		String cell1 = Calc.NumberGet;
-		String cell2 = Calc.GroupGet;
-		String cell3 = Calc.FIOGet;
-		String cell4 = Calc.PointsGet;
+		//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+		
+		Phrase cell1 = new Phrase(Calc.NumberGet,new Font(font,14));
+		Phrase cell2 = new Phrase(Calc.GroupGet,new Font(font,14));
+		Phrase cell3 = new Phrase(Calc.FIOGet,new Font(font,14));
+		Phrase cell4 = new Phrase(Calc.PointsGet,new Font(font,14));
 				
 		table.addCell(cell1);
 	    table.addCell(cell2);
 	    table.addCell(cell3);
 	    table.addCell(cell4);
 		
-	    //выше должен быть текст на русском языке, как его вывести можно посмотреть в справке.
+	    //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 	}
 
 private void addHeader(PdfPTable table) {
